@@ -46,7 +46,8 @@ const headerEkleyici = (secici) => {
   const result= Header("DENEME BAŞLIĞI","10.05.2002","deneme deneme deneme deneme deneme deneme");
     const htmlHeader=document.querySelector(secici);
     htmlHeader.append(result);
-
+   
+    
 
 }
 

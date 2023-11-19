@@ -17,6 +17,37 @@ const Card = (makale) => {
   //   </div>
   // </div>
   //
+
+  const card=document.createElement("div");
+  card.classList.add("card");
+  //card is childeren 
+  const headlineİnfo=document.createElement("div");
+  headlineİnfo.classList.add("headline");
+  headlineİnfo.textContent=makale.anabaslik;
+  card.append(headlineİnfo);
+
+  const authorİnfo=document.createElement("div");
+  authorİnfo.classList.add("author");
+  card.append(authorİnfo);
+  
+  // author is child
+  const imgContainerİnfo=document.createElement("div");
+  imgContainerİnfo.classList.add("img-container");
+  authorİnfo.append(imgContainerİnfo);
+
+  // img-container child
+  const img=document.createElement("img");
+  img.setAttribute("src",makale.yazafoto);
+  imgContainerİnfo.append(img);
+  //author is child
+  const spanİnfo=document.createElement("span");
+  spanİnfo.textContent=`${makale.yazAdı} tarafından`;
+  authorİnfo.append(spanİnfo);
+
+  return card 
+  
+
+
 }
 
 const cardEkleyici = (secici) => {
