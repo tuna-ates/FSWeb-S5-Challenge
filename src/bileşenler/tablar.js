@@ -27,12 +27,6 @@ const Tablar = (konular) => {
   return parentDiv;
 }
 
-axios.get(`http://localhost:5001/api/konular`)
-.then((resolve)=>{
-  console.log("sonuc:",resolve.data.konular);
-
-tabEkleyici(Tablar(resolve.data.konular));
-})
 const tabEkleyici = (secici) => {
   // GÖREV 4
   // ---------------------
@@ -41,7 +35,13 @@ const tabEkleyici = (secici) => {
   // Yanıtın içindeki konu dizisini bulun ve Tablar bileşenini kullanarak tabları oluşturun.
   // Tabları, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
- document.querySelector(".deneme1").append(secici);
+
+axios.get(`http://localhost:5001/api/konular`)
+.then((resolve)=>{
+  console.log("sonuc:",resolve.data.konular);
+  document.querySelector(secici).append(Tablar(resolve.data.konular));
+
+})
    
 }
 
